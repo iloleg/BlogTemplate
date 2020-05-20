@@ -1,0 +1,17 @@
+
+{% extends 'base.html' %}
+{% load markdown_extras %}
+{% block title %}{{ object.post_title }}{% endblock %}
+
+{% block content %}
+
+<div class="card border-primary mb-5 p-5 shadow-lg bg-white rounded">
+  <h4 class="display-4">{{ object.post_title }}</h4>
+  <hr class="m-2 p-3">
+  <p>{{ object.post_body | markdown | safe }}</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="{% url 'home' %}" role="button">Home Page</a>
+  </p>
+</div>
+
+{% endblock %}
